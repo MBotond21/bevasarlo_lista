@@ -61,6 +61,16 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        this.listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                items.remove(position);
+                quantitys.remove(position);
+                customAdapter.notifyDataSetChanged();
+                return true;
+            }
+        });
     }
 
     private void init(){
